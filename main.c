@@ -28,7 +28,7 @@ int main()
         fgets(input, sizeof(input), stdin);
 
         // Parse the input using sscanf
-        int parsed = sscanf(input, "%10s %d %d %d %d %d %d %d %d %d %d %d %d %d",
+        int parsed = sscanf(input, "%10s, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d",
                             students[i].name,
                             students[i].exam[0],
                             students[i].exam[1],
