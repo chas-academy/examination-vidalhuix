@@ -18,24 +18,30 @@ int main()
         // Store the names
         printf("Student %d: ", s + 1);
         scanf("%s", names[s]);
-        sum_grades = 0;
+        // Capitalize names
+        if (names[s][0] >= 'a' && names[s][0] <= 'z')
+        {
+            names[s][0] = names[s][0] - 32; //-32 to capitalize it
+        }
 
         // Store the grades
         for (int g = 0; g < NUM_GRADES; g++)
         {
             scanf("%d", &grades[s][g]);
-            sum_grades += grades[s][g]; // Why do we need to spacify how many students? haven't we already done this att line 10?
+            sum_grades += grades[s][g];
         }
 
-        averages[s] = (float)sum_grades / NUM_GRADES; // Calculates average
+        // Calculates average
+        averages[s] = (float)sum_grades / NUM_GRADES;
     }
 
+    // Print results
     for (int s = 0; s < NUM_STUDENTS; s++)
     {
         printf("\nName: %s\nGrades: ", names[s]);
         for (int i = 0; i < NUM_GRADES; i++)
         {
-            printf("%d, ", grades[s][i]); // Why don't I get the grade number here? I get numbers like "-998246864, -998246812, -998246760, -998246708..."
+            printf("%d, ", grades[s][i]);
         }
         printf("\n");
         printf("%.001f ", averages[s]);
