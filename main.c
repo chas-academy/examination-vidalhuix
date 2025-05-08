@@ -69,7 +69,6 @@ int main()
     float average_under_media = averages[0];
     int students_under_media = 0;
 
-    printf("\n");
     for (int s = 0; s < NUM_STUDENTS; s++)
     {
         if (averages[s] <= 5)
